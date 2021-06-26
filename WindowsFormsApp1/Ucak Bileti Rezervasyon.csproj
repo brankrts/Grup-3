@@ -39,6 +39,12 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\Desktop\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\Desktop\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -53,6 +59,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,79 +74,167 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChildForms\frmLogin.cs">
+    <Compile Include="ChildForms\FrmAccountInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForms\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="ChildForms\FrmAccountInfo.Designer.cs">
+      <DependentUpon>FrmAccountInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForms\frmMaster.cs">
+    <Compile Include="ChildForms\FrmListOfFlight.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForms\frmMaster.Designer.cs">
-      <DependentUpon>frmMaster.cs</DependentUpon>
+    <Compile Include="ChildForms\FrmListOfFlight.Designer.cs">
+      <DependentUpon>FrmListOfFlight.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForms\frmMonth.cs">
+    <Compile Include="ChildForms\HesapBilgilerim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForms\frmMonth.Designer.cs">
-      <DependentUpon>frmMonth.cs</DependentUpon>
+    <Compile Include="ChildForms\HesapBilgilerim.designer.cs">
+      <DependentUpon>HesapBilgilerim.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForms\frmRegister.cs">
+    <Compile Include="ChildForms\FrmAvailableFlight.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForms\frmRegister.Designer.cs">
-      <DependentUpon>frmRegister.cs</DependentUpon>
+    <Compile Include="ChildForms\FrmAvailableFlight.designer.cs">
+      <DependentUpon>FrmAvailableFlight.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForms\frmSearchFlight.cs">
+    <Compile Include="ChildForms\UçuşGeçmişim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForms\frmSearchFlight.Designer.cs">
-      <DependentUpon>frmSearchFlight.cs</DependentUpon>
+    <Compile Include="ChildForms\UçuşGeçmişim.designer.cs">
+      <DependentUpon>UçuşGeçmişim.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForms\frmWhoWeAre.cs">
+    <Compile Include="ChildForms\Giris.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForms\frmWhoWeAre.Designer.cs">
-      <DependentUpon>frmWhoWeAre.cs</DependentUpon>
+    <Compile Include="ChildForms\Giris.designer.cs">
+      <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="ChildForms\SifremiUnuttum.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ChildForms\SifremiUnuttum.designer.cs">
+      <DependentUpon>SifremiUnuttum.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="ChildForms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="ChildForms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FormMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FormMaster.Designer.cs">
+      <DependentUpon>FormMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FormsMaster\FrmAddMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FormsMaster\FrmAddMaster.Designer.cs">
+      <DependentUpon>FrmAddMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FormsMaster\frmAddFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FormsMaster\frmAddFlight.Designer.cs">
+      <DependentUpon>frmAddFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FrmMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FrmMonth.Designer.cs">
+      <DependentUpon>FrmMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FrmSearchFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FrmSearchFlight.Designer.cs">
+      <DependentUpon>FrmSearchFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FrmWhoWeAre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FrmWhoWeAre.Designer.cs">
+      <DependentUpon>FrmWhoWeAre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Database\DbConnect\BiletlerProvider.cs" />
+    <Compile Include="Controls\Database\DbConnect\DbConnector.cs" />
+    <Compile Include="Controls\Database\DbConnect\KoltukProvider.cs" />
+    <Compile Include="Controls\Database\DbConnect\MusteriProvider.cs" />
+    <Compile Include="Controls\Database\DbConnect\SehirlerProvider.cs" />
+    <Compile Include="Controls\Database\DbConnect\SirketlerProvider.cs" />
+    <Compile Include="Controls\Database\DbConnect\UcusGecmisiProvider.cs" />
+    <Compile Include="Controls\Database\DbConnect\UcusProvider.cs" />
+    <Compile Include="Controls\OpenChildForms.cs" />
+    <Compile Include="Controls\Database\Biletler.cs" />
+    <Compile Include="Controls\Database\Koltuklar.cs" />
+    <Compile Include="Controls\Database\Musteriler.cs" />
+    <Compile Include="Controls\Database\Sehirler.cs" />
+    <Compile Include="Controls\Database\Sirketler.cs" />
+    <Compile Include="Controls\Database\Ucuslar.cs" />
+    <Compile Include="Controls\Database\Ucus_Gecmisi.cs" />
+    <Compile Include="FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChildForms\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\FrmAccountInfo.resx">
+      <DependentUpon>FrmAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForms\frmMaster.resx">
-      <DependentUpon>frmMaster.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\FrmListOfFlight.resx">
+      <DependentUpon>FrmListOfFlight.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForms\frmMonth.resx">
-      <DependentUpon>frmMonth.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\HesapBilgilerim.resx">
+      <DependentUpon>HesapBilgilerim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForms\frmRegister.resx">
-      <DependentUpon>frmRegister.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\FrmAvailableFlight.resx">
+      <DependentUpon>FrmAvailableFlight.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForms\frmSearchFlight.resx">
-      <DependentUpon>frmSearchFlight.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\UçuşGeçmişim.resx">
+      <DependentUpon>UçuşGeçmişim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForms\frmWhoWeAre.resx">
-      <DependentUpon>frmWhoWeAre.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\Giris.resx">
+      <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\SifremiUnuttum.resx">
+      <DependentUpon>SifremiUnuttum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FormMaster.resx">
+      <DependentUpon>FormMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FormsMaster\FrmAddMaster.resx">
+      <DependentUpon>FrmAddMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FormsMaster\frmAddFlight.resx">
+      <DependentUpon>frmAddFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FrmMonth.resx">
+      <DependentUpon>FrmMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FrmRegister.resx">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FrmSearchFlight.resx">
+      <DependentUpon>FrmSearchFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FrmWhoWeAre.resx">
+      <DependentUpon>FrmWhoWeAre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,5 +259,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

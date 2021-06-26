@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.ChildForms
 {
-    public partial class frmSearchFlight : Form
+    public partial class FrmSearchFlight : Form
     {
-        public frmSearchFlight()
+        public FrmSearchFlight()
         {
             InitializeComponent();
         }

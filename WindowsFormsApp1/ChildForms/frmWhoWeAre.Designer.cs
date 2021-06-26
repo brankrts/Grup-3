@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1.ChildForms
 {
-    partial class frmWhoWeAre
+    partial class FrmWhoWeAre
     {
         /// <summary>
         /// Required designer variable.

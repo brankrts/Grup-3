@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1.ChildForms
 {
-    partial class frmSearchFlight
+    partial class FrmSearchFlight
     {
         /// <summary>
         /// Required designer variable.

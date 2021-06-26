@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.ChildForms
 {
-    public partial class frmWhoWeAre : Form
+    public partial class FrmWhoWeAre : Form
     {
-        public frmWhoWeAre()
+        public FrmWhoWeAre()
         {
             InitializeComponent();
         }

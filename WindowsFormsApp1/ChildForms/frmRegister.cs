@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.ChildForms
 {
-    public partial class frmRegister : Form
+    public partial class FrmRegister : Form
     {
-        public frmRegister()
+        public FrmRegister()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
