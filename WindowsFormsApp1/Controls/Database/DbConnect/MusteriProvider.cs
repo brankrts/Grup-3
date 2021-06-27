@@ -7,13 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Database;
 using WindowsFormsApp1.Controls.Database.DbConnect;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Controls.Database
 {
     class MusteriProvider
-{
+{       
         DbConnector dbcon = new DbConnector();
-        public MusteriProvider() //Kurucu metot
+        SqlDataReader reader;
+        public MusteriProvider() 
         {
             dbcon.Baglan();
         }
@@ -28,7 +30,7 @@ namespace WindowsFormsApp1.Controls.Database
                 dbcon.cmd.CommandText = "Select *From Musteriler";
                 dbcon.cmd.CommandType = CommandType.Text;
                 dbcon.con.Open();
-                SqlDataReader reader = dbcon.cmd.ExecuteReader();
+                reader = dbcon.cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     Musteriler m = new Musteriler();
@@ -63,10 +65,21 @@ namespace WindowsFormsApp1.Controls.Database
         {
             try
             {
-                dbcon.cmd.CommandText = "Insert Into Musteriler (MusteriTC,MusteriAdi,MusteriSoyadi,MusteriCinsiyet,MusteriTel,MusteriMail,MusteriSifre,MusteriYetki) Values (" + MusteriTC + ",'" + MusteriAdi + "','" + MusteriSoyadi + "','" + MusteriCinsiyet + "','" + MusteriTel + "','" + MusteriMail + "','" + MusteriSifre + "','" + MusteriYetki + "')";
-                dbcon.cmd.CommandType = CommandType.Text;
+                
+                dbcon.cmd = new SqlCommand("INSERT INTO [Musteriler] (MusteriTC,MusteriAdi,MusteriSoyadi,MusteriCinsiyet,MusteriTel,MusteriMail,MusteriSifre,MusteriYetki) values (@MusteriTC,@MusteriAdi,@MusteriSoyadi,@MusteriCinsiyet,@MusteriTel,@MusteriMail,@MusteriSifre,@MusteriYetki)", dbcon.con);
+
+
+                dbcon.cmd.Parameters.AddWithValue("@MusteriTC", MusteriTC);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriAdi", MusteriAdi);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriSoyadi", MusteriSoyadi);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriCinsiyet", MusteriCinsiyet);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriTel", MusteriTel);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriMail", MusteriMail);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriSifre", MusteriSifre);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriYetki", MusteriYetki);
                 dbcon.con.Open();
                 dbcon.cmd.ExecuteNonQuery();
+                
             }
             catch (Exception)
             {
@@ -128,6 +141,68 @@ namespace WindowsFormsApp1.Controls.Database
                     dbcon.con.Close();
                 }
             }
+        }
+        public bool Login(Guna.UI.WinForms.GunaLineTextBox txtTC, Guna.UI.WinForms.GunaLineTextBox txtPassowrd) {
+
+
+            try
+            {
+                dbcon.cmd = new SqlCommand("SELECT * FROM [Musteriler] where MusteriTC=@MusteriTC AND MusteriSifre=@MusteriSifre", dbcon.con);
+
+                dbcon.cmd.Parameters.AddWithValue("@MusteriTC", txtTC.Text);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriSifre", txtPassowrd.Text);
+                dbcon.con.Open();
+
+                reader = dbcon.cmd.ExecuteReader();
+                if (reader.Read())
+                {
+
+                    return true;
+
+                }
+                else { return false; }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+
+
+
+        }
+        public bool IsMaster(string Tc) {
+
+            
+            
+
+             dbcon.cmd = new SqlCommand("SELECT MusteriYetki FROM [Musteriler] where MusteriTC=@MusteriTC ", dbcon.con);
+             dbcon.cmd.Parameters.AddWithValue("@MusteriTC", Tc.ToString()) ;
+             dbcon.con.Open();
+             reader = dbcon.cmd.ExecuteReader();
+            reader.Read();
+            if (reader[0].ToString() == "master") {
+
+                return true;
+            
+            
+             
+             }
+             else { return false; }
+            
+           
+
+
+
+            
         }
 
     }

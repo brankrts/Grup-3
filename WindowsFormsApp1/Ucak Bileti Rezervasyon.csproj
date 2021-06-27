@@ -165,6 +165,7 @@
       <DependentUpon>FrmWhoWeAre.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Database\DbConnect\BiletlerProvider.cs" />
+    <Compile Include="Controls\Database\CurrentValues.cs" />
     <Compile Include="Controls\Database\DbConnect\DbConnector.cs" />
     <Compile Include="Controls\Database\DbConnect\KoltukProvider.cs" />
     <Compile Include="Controls\Database\DbConnect\MusteriProvider.cs" />
@@ -180,6 +181,11 @@
     <Compile Include="Controls\Database\Sirketler.cs" />
     <Compile Include="Controls\Database\Ucuslar.cs" />
     <Compile Include="Controls\Database\Ucus_Gecmisi.cs" />
+    <Compile Include="db_FlightDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_FlightDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="db_FlightDataSet.xsc">
+      <DependentUpon>db_FlightDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_FlightDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_FlightDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_FlightDataSet.xss">
+      <DependentUpon>db_FlightDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -259,6 +276,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\2 %281%29.png" />
+    <Content Include="Images\2 %282%29.png" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Busra\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

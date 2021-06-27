@@ -9,27 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using WindowsFormsApp1.Controls;
+using WindowsFormsApp1.Controls.Database;
+using WindowsFormsApp1.Controls.Database.DbConnect;
 
 namespace WindowsFormsApp1
 {
     public partial class frmMain : Form
     {
+
+        public static string CurrentTC;
         private IconButton currentButton;
         private Panel leftBorderBtn;
         OpenChildForms open = new OpenChildForms();
-        
-        public frmMain()
-        {
-            InitializeComponent();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7,53);
-            pnlMenu.Controls.Add(leftBorderBtn);
-        }
 
+        MusteriProvider Musteri = new MusteriProvider();
         
-        private struct RGBColors {
+        private struct RGBColors
+        {
             public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249,118,176);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
@@ -37,10 +35,12 @@ namespace WindowsFormsApp1
 
         }
 
-        private void ActiveButton(object senderBtn, Color color) {
+        private void ActiveButton(object senderBtn, Color color)
+        {
 
 
-            if (senderBtn != null) {
+            if (senderBtn != null)
+            {
                 DisiableButton();
                 currentButton = (IconButton)senderBtn;
                 currentButton.BackColor = Color.FromArgb(37, 36, 81);
@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
                 currentButton.ImageAlign = ContentAlignment.MiddleRight;
 
                 leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0,currentButton.Location.Y);
+                leftBorderBtn.Location = new Point(0, currentButton.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
 
@@ -60,17 +60,19 @@ namespace WindowsFormsApp1
                 lblTitle.Text = currentButton.Text;
 
 
-            
+
             }
-        
-        
+
+
         }
-        private void DisiableButton() {
+        private void DisiableButton()
+        {
 
 
 
-            if (currentButton != null) {
-                
+            if (currentButton != null)
+            {
+
                 currentButton.BackColor = Color.FromArgb(31, 30, 68);
                 currentButton.ForeColor = Color.Gainsboro;
                 currentButton.TextAlign = ContentAlignment.MiddleLeft;
@@ -79,11 +81,72 @@ namespace WindowsFormsApp1
                 currentButton.ImageAlign = ContentAlignment.MiddleLeft;
 
 
-            } }
-       
+            }
+        }
+        private void Login()
+        {
+            if (Musteri.Login(txtTC, txtPassword))
+            {
 
+                lblUyari.Text = "Giriş Başarılı.";
+                lblUyari.ForeColor = System.Drawing.Color.Green;
+                CurrentTC = txtTC.Text.ToString();
+                lblUyari.Text = CurrentTC;
+            }
+            else
+            {
+                txtTC.Text = "";
+                txtPassword.Text = "";
+                lblUyari.Text = "Giriş Başarısız.";
+                lblUyari.ForeColor = System.Drawing.Color.Red;
+
+
+
+            }
+        }
         
-       
+        
+        public frmMain()
+        {
+            InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7,53);
+            pnlMenu.Controls.Add(leftBorderBtn);
+            open.OpenChildForm(new ChildForms.FrmSearchFlight(), pnlChildForm);
+            FormInitFalse();
+        }
+
+        private void FormInitFalse() {
+
+            btnSearchFlight.Visible = false;
+            btnMonthChart.Visible = false;
+            btnMaster.Visible = false;
+            btnAcountInfo.Visible = false;
+            open.currentChildForm.Close();
+            
+            //open.OpenChildForm(new ChildForms.FrmLogin(), pnlChildForm);
+        
+        
+        }
+        private void FormInitTrue() {
+
+            btnSearchFlight.Visible = true;
+            btnMonthChart.Visible = true;
+            btnAcountInfo.Visible = true;
+            btnLogin.Visible = false;
+            btnRegister.Visible = false;
+            if (Musteri.IsMaster(CurrentTC)) {
+                btnMaster.Visible = true;
+                open.OpenChildForm(new ChildForms.FormMaster(), pnlChildForm);
+            }else {
+                open.OpenChildForm(new ChildForms.FrmSearchFlight(), pnlChildForm);
+
+
+            }
+
+        }
+
+
 
         private void ıconButton2_Click(object sender, EventArgs e)
         {
@@ -101,8 +164,13 @@ namespace WindowsFormsApp1
         private void ıconButton1_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
-            
-            open.OpenChildForm(new ChildForms.FrmLogin(), pnlChildForm);
+            Reset();
+            if (open.currentChildForm != null)
+            {
+                open.currentChildForm.Close();
+            }
+
+            // open.OpenChildForm(new ChildForms.FrmLogin(), pnlChildForm);
 
 
         }
@@ -130,19 +198,19 @@ namespace WindowsFormsApp1
         private void Reset() {
 
             DisiableButton();
-            leftBorderBtn.Visible = false;
-            btnTitle.IconChar = IconChar.Home;
+            leftBorderBtn.Visible = true;
+            btnTitle.IconChar = IconChar.SignInAlt;
             btnTitle.IconColor = Color.MediumPurple;
-            lblTitle.Text = "Anasayfa";
+            lblTitle.Text = "Giriş Yap";
         
         }
         private void btnHome_Click(object sender, EventArgs e)
         {   
-            Reset();
+           /*Reset();
             if (open.currentChildForm != null)
             {
                 open.currentChildForm.Close();
-            }
+            }*/
         }
 
         private void ıconButton1_Click_1(object sender, EventArgs e)
@@ -166,6 +234,12 @@ namespace WindowsFormsApp1
 
             ActiveButton(sender, RGBColors.color5);
             open.OpenChildForm(new Proje1.HesapBilgilerim(),pnlChildForm);
+        }
+
+        private void btnTryLogin_Click(object sender, EventArgs e)
+        {
+            Login();
+            FormInitTrue();
         }
     }
 }
