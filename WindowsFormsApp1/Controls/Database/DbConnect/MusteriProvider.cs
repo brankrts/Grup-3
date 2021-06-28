@@ -19,8 +19,6 @@ namespace WindowsFormsApp1.Controls.Database
         {
             dbcon.Baglan();
         }
-        
-
         public List<Musteriler> Listele()
         {
             
@@ -60,7 +58,6 @@ namespace WindowsFormsApp1.Controls.Database
                 }
             }
         }
-
         public void Ekle(string MusteriTC,string MusteriAdi,string MusteriSoyadi,string MusteriCinsiyet,string MusteriTel,string MusteriMail,string MusteriSifre,string MusteriYetki = "normal")
         {
             try
@@ -95,7 +92,6 @@ namespace WindowsFormsApp1.Controls.Database
             }
 
         }
-
         public void Guncelle(Musteriler MevcutMusteri, string MusteriTC, string MusteriAdi, string MusteriSoyadi, string MusteriCinsiyet, string MusteriTel, string MusteriMail,  string MusteriYetki = "normal")
         {
             try
@@ -178,6 +174,37 @@ namespace WindowsFormsApp1.Controls.Database
 
 
 
+        }
+        public int GetID(string MusteriTC)
+        {
+            int ID;
+            try
+            {
+
+                dbcon.cmd = new SqlCommand("SELECT MusteriID FROM [Musteriler] where MusteriID=@MusteriID", dbcon.con);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriID", MusteriTC);
+                dbcon.con.Open();
+                reader = dbcon.cmd.ExecuteReader();
+                reader.Read();
+                ID = Convert.ToInt32(reader["MusteriID"]);
+                return ID;
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
         }
         public bool IsMaster(string Tc) {
 

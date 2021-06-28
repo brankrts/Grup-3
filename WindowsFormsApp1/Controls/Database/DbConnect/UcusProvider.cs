@@ -53,7 +53,38 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 }
             }
         }
+        public void AddFlight(int SirketID,int Nereden,int Nereye,string picker,string saat,int Fiyat)
+        {
+            try
+            {
 
+                dbcon.cmd = new SqlCommand("INSERT INTO [Ucuslar] (SirketID,Nereden,Nereye,Tarih,Saat,Fiyat) values (@SirketID,@Nereden,@Nereye,@Tarih,@Saat,@Fiyat)", dbcon.con);
+
+
+                dbcon.cmd.Parameters.AddWithValue("@SirketID", SirketID);
+                dbcon.cmd.Parameters.AddWithValue("@Nereden", Nereden);
+                dbcon.cmd.Parameters.AddWithValue("@Nereye", Nereye);
+                dbcon.cmd.Parameters.AddWithValue("@Tarih", picker);
+                dbcon.cmd.Parameters.AddWithValue("@Saat", saat);
+                dbcon.cmd.Parameters.AddWithValue("@Fiyat", Fiyat);
+                dbcon.con.Open();
+                dbcon.cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
         public void Ekle(int SirketID,int Nereden,int Nereye,DateTime Tarih,int Fiyat)
         {
             try

@@ -79,7 +79,7 @@ namespace WindowsFormsApp1.ChildForms
             if (Denetle() && Options(txtTC) && Options(txtTel) || IsSame() ) {
 
                 Musteri.Ekle(txtTC.Text.ToString(), txtAd.Text.ToString(), txtSoyad.Text.ToString(), cbmCinsiyet.SelectedItem.ToString(), txtTel.Text.ToString(), txtMail.Text.ToString(), txtSifre.Text.ToString());
-                ChangeLabelText("Kayır Başarı İle Tamamlandı",colorGreen);
+                ChangeLabelText("Kayıt Başarı İle Tamamlandı",colorGreen);
             
             }
             ClearBOX();

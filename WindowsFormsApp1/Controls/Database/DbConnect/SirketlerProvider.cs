@@ -11,7 +11,9 @@ using System.Data.SqlClient;
 namespace WindowsFormsApp1.Controls.Database.DbConnect
 {
     class SirketlerProvider
+
     {
+        SqlDataReader reader;
         DbConnector dbcon = new DbConnector();
         public SirketlerProvider()
         {
@@ -30,7 +32,7 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 SqlDataReader reader = dbcon.cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Sirketler s = new  Sirketler();
+                    Sirketler s = new Sirketler();
                     s.SirketID = Convert.ToInt32(reader[0].ToString());
                     s.SirketAdi = reader[1].ToString();
 
@@ -51,6 +53,40 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 }
             }
         }
+        public int GetID(string SirketAdi)
+        {
+            int ID;
+            try
+            {
+
+                dbcon.cmd = new SqlCommand("SELECT SirketID FROM [Sirketler] where SirketAdi=@SirketAdi", dbcon.con);
+                dbcon.cmd.Parameters.AddWithValue("@SirketAdi", SirketAdi);
+                dbcon.con.Open();
+                reader = dbcon.cmd.ExecuteReader();
+                reader.Read();
+                ID = Convert.ToInt32(reader["SirketID"]);
+                return ID;
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+        }
+
+
+
 
         public void Ekle(string SirketAdi)
         {
@@ -108,6 +144,37 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 dbcon.cmd.CommandType = CommandType.Text;
                 dbcon.con.Open();
                 dbcon.cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
+        public void ListOfSirketler(Guna.UI2.WinForms.Guna2ComboBox cmbSirketler)
+        {
+            try
+            {
+
+                dbcon.cmd = new SqlCommand("SELECT * FROM [Sirketler]", dbcon.con);
+                dbcon.con.Open();
+                reader = dbcon.cmd.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+
+                    cmbSirketler.Items.Add(reader["SirketAdi"]);
+
+                }
             }
             catch (Exception)
             {
