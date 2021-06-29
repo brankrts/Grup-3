@@ -34,11 +34,13 @@ namespace Proje1
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UcusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SirkatAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nereden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nereye = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,18 +62,20 @@ namespace Proje1
             this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeight = 40;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
+            this.UcusID,
+            this.SirkatAdi,
+            this.Nereden,
+            this.Nereye,
+            this.Tarih,
+            this.Saat,
+            this.Fiyat});
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SlateBlue;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.Snow;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(3, 5);
-            this.bunifuCustomDataGrid1.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(4, 6);
+            this.bunifuCustomDataGrid1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -95,47 +99,64 @@ namespace Proje1
             this.bunifuCustomDataGrid1.RowTemplate.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(752, 501);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(980, 580);
             this.bunifuCustomDataGrid1.TabIndex = 0;
-            this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
-            // Column1
+            // UcusID
             // 
-            this.Column1.HeaderText = "Firma";
-            this.Column1.Name = "Column1";
+            this.UcusID.HeaderText = "UcusID";
+            this.UcusID.MinimumWidth = 6;
+            this.UcusID.Name = "UcusID";
+            this.UcusID.Visible = false;
             // 
-            // Column2
+            // SirkatAdi
             // 
-            this.Column2.HeaderText = "Nereden";
-            this.Column2.Name = "Column2";
+            this.SirkatAdi.HeaderText = "Sirkat";
+            this.SirkatAdi.MinimumWidth = 6;
+            this.SirkatAdi.Name = "SirkatAdi";
             // 
-            // Column3
+            // Nereden
             // 
-            this.Column3.HeaderText = "Nereye";
-            this.Column3.Name = "Column3";
+            this.Nereden.HeaderText = "Nereden";
+            this.Nereden.MinimumWidth = 6;
+            this.Nereden.Name = "Nereden";
             // 
-            // Column4
+            // Nereye
             // 
-            this.Column4.HeaderText = "Tarih";
-            this.Column4.Name = "Column4";
+            this.Nereye.HeaderText = "Nereye";
+            this.Nereye.MinimumWidth = 6;
+            this.Nereye.Name = "Nereye";
             // 
-            // Column5
+            // Tarih
             // 
-            this.Column5.HeaderText = "Fiyat";
-            this.Column5.Name = "Column5";
+            this.Tarih.HeaderText = "Tarih";
+            this.Tarih.MinimumWidth = 6;
+            this.Tarih.Name = "Tarih";
+            // 
+            // Saat
+            // 
+            this.Saat.HeaderText = "Saat";
+            this.Saat.MinimumWidth = 6;
+            this.Saat.Name = "Saat";
+            // 
+            // Fiyat
+            // 
+            this.Fiyat.HeaderText = "Fiyat";
+            this.Fiyat.MinimumWidth = 6;
+            this.Fiyat.Name = "Fiyat";
             // 
             // MevcutUçuşlarım
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(759, 508);
+            this.ClientSize = new System.Drawing.Size(1012, 625);
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MevcutUçuşlarım";
             this.Text = "MevcutUçuşlarım";
             this.Load += new System.EventHandler(this.MevcutUçuşlarım_Load);
-            this.Shown += new System.EventHandler(this.MevcutUçuşlarım_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.ResumeLayout(false);
 
@@ -144,10 +165,12 @@ namespace Proje1
         #endregion
 
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UcusID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SirkatAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nereden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nereye;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tarih;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fiyat;
     }
 }

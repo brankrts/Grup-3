@@ -29,125 +29,301 @@ namespace WindowsFormsApp1.ChildForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.ucuslarBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbFlightBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_Flight = new WindowsFormsApp1.db_Flight();
+            this.ucuslarBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.db_FlightDataSet = new WindowsFormsApp1.db_FlightDataSet();
+            this.ucuslarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ucuslarTableAdapter = new WindowsFormsApp1.db_FlightDataSetTableAdapters.UcuslarTableAdapter();
+            this.ucuslarBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ucuslarBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.ucuslarTableAdapter1 = new WindowsFormsApp1.db_FlightTableAdapters.UcuslarTableAdapter();
+            this.pnlListOfFlights = new System.Windows.Forms.Panel();
+            this.btnBiletAl = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.gridListofFlight = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.UcusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SirketAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SehirAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SehirAdi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbFlightBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_Flight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FlightDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource2)).BeginInit();
+            this.pnlListOfFlights.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListofFlight)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuCustomDataGrid1
+            // ucuslarBindingSource4
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeight = 40;
-            this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SlateBlue;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.Snow;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(2, 1);
-            this.bunifuCustomDataGrid1.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.bunifuCustomDataGrid1.RowHeadersVisible = false;
-            this.bunifuCustomDataGrid1.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(25)))));
-            this.bunifuCustomDataGrid1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 3;
-            this.bunifuCustomDataGrid1.RowTemplate.Height = 40;
-            this.bunifuCustomDataGrid1.RowTemplate.ReadOnly = true;
-            this.bunifuCustomDataGrid1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(773, 361);
-            this.bunifuCustomDataGrid1.TabIndex = 1;
-            this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
+            this.ucuslarBindingSource4.DataMember = "Ucuslar";
+            this.ucuslarBindingSource4.DataSource = this.dbFlightBindingSource;
             // 
-            // Column1
+            // dbFlightBindingSource
             // 
-            this.Column1.HeaderText = "Firma";
-            this.Column1.Name = "Column1";
+            this.dbFlightBindingSource.DataSource = this.db_Flight;
+            this.dbFlightBindingSource.Position = 0;
             // 
-            // Column2
+            // db_Flight
             // 
-            this.Column2.HeaderText = "Nereden";
-            this.Column2.Name = "Column2";
+            this.db_Flight.DataSetName = "db_Flight";
+            this.db_Flight.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Column3
+            // ucuslarBindingSource3
             // 
-            this.Column3.HeaderText = "Nereye";
-            this.Column3.Name = "Column3";
+            this.ucuslarBindingSource3.DataMember = "Ucuslar";
+            this.ucuslarBindingSource3.DataSource = this.dbFlightBindingSource;
             // 
-            // Column4
+            // db_FlightDataSet
             // 
-            this.Column4.HeaderText = "Tarih";
-            this.Column4.Name = "Column4";
+            this.db_FlightDataSet.DataSetName = "db_FlightDataSet";
+            this.db_FlightDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Column5
+            // ucuslarBindingSource
             // 
-            this.Column5.HeaderText = "Fiyat";
-            this.Column5.Name = "Column5";
+            this.ucuslarBindingSource.DataMember = "Ucuslar";
+            this.ucuslarBindingSource.DataSource = this.db_FlightDataSet;
+            // 
+            // ucuslarTableAdapter
+            // 
+            this.ucuslarTableAdapter.ClearBeforeFill = true;
+            // 
+            // ucuslarBindingSource1
+            // 
+            this.ucuslarBindingSource1.DataMember = "Ucuslar";
+            this.ucuslarBindingSource1.DataSource = this.db_FlightDataSet;
+            // 
+            // ucuslarBindingSource2
+            // 
+            this.ucuslarBindingSource2.DataMember = "Ucuslar";
+            this.ucuslarBindingSource2.DataSource = this.dbFlightBindingSource;
+            // 
+            // ucuslarTableAdapter1
+            // 
+            this.ucuslarTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pnlListOfFlights
+            // 
+            this.pnlListOfFlights.Controls.Add(this.btnBiletAl);
+            this.pnlListOfFlights.Controls.Add(this.gridListofFlight);
+            this.pnlListOfFlights.Location = new System.Drawing.Point(8, 12);
+            this.pnlListOfFlights.Name = "pnlListOfFlights";
+            this.pnlListOfFlights.Size = new System.Drawing.Size(1053, 598);
+            this.pnlListOfFlights.TabIndex = 0;
+            this.pnlListOfFlights.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlListOfFlights_Paint);
+            // 
+            // btnBiletAl
+            // 
+            this.btnBiletAl.BorderRadius = 20;
+            this.btnBiletAl.CheckedState.Parent = this.btnBiletAl;
+            this.btnBiletAl.CustomImages.Parent = this.btnBiletAl;
+            this.btnBiletAl.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBiletAl.ForeColor = System.Drawing.Color.White;
+            this.btnBiletAl.HoverState.Parent = this.btnBiletAl;
+            this.btnBiletAl.Location = new System.Drawing.Point(348, 546);
+            this.btnBiletAl.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBiletAl.Name = "btnBiletAl";
+            this.btnBiletAl.ShadowDecoration.Parent = this.btnBiletAl;
+            this.btnBiletAl.Size = new System.Drawing.Size(311, 43);
+            this.btnBiletAl.TabIndex = 14;
+            this.btnBiletAl.Text = "Bilet Al";
+            this.btnBiletAl.Click += new System.EventHandler(this.btnBiletAl_Click);
+            // 
+            // gridListofFlight
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridListofFlight.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListofFlight.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridListofFlight.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.gridListofFlight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridListofFlight.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridListofFlight.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListofFlight.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridListofFlight.ColumnHeadersHeight = 40;
+            this.gridListofFlight.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridListofFlight.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UcusID,
+            this.SirketAdi,
+            this.SehirAdi,
+            this.SehirAdi1,
+            this.Tarih,
+            this.Saat,
+            this.Fiyat});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Format = "D";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridListofFlight.DefaultCellStyle = dataGridViewCellStyle4;
+            this.gridListofFlight.DoubleBuffered = true;
+            this.gridListofFlight.EnableHeadersVisualStyles = false;
+            this.gridListofFlight.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.gridListofFlight.HeaderBgColor = System.Drawing.Color.SlateBlue;
+            this.gridListofFlight.HeaderForeColor = System.Drawing.Color.Snow;
+            this.gridListofFlight.Location = new System.Drawing.Point(3, 2);
+            this.gridListofFlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridListofFlight.Name = "gridListofFlight";
+            this.gridListofFlight.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gridListofFlight.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListofFlight.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.gridListofFlight.RowHeadersVisible = false;
+            this.gridListofFlight.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridListofFlight.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridListofFlight.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.gridListofFlight.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.gridListofFlight.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(25)))));
+            this.gridListofFlight.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridListofFlight.RowTemplate.DividerHeight = 3;
+            this.gridListofFlight.RowTemplate.Height = 40;
+            this.gridListofFlight.RowTemplate.ReadOnly = true;
+            this.gridListofFlight.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridListofFlight.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridListofFlight.Size = new System.Drawing.Size(1036, 537);
+            this.gridListofFlight.TabIndex = 13;
+            // 
+            // UcusID
+            // 
+            this.UcusID.DataPropertyName = "UcusID";
+            this.UcusID.HeaderText = "UcusID";
+            this.UcusID.MinimumWidth = 6;
+            this.UcusID.Name = "UcusID";
+            this.UcusID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.UcusID.Visible = false;
+            // 
+            // SirketAdi
+            // 
+            this.SirketAdi.DataPropertyName = "SirketAdi";
+            this.SirketAdi.HeaderText = "Firma";
+            this.SirketAdi.MinimumWidth = 6;
+            this.SirketAdi.Name = "SirketAdi";
+            this.SirketAdi.ReadOnly = true;
+            this.SirketAdi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SehirAdi
+            // 
+            this.SehirAdi.DataPropertyName = "SehirAdi";
+            this.SehirAdi.HeaderText = "Nereden";
+            this.SehirAdi.MinimumWidth = 6;
+            this.SehirAdi.Name = "SehirAdi";
+            this.SehirAdi.ReadOnly = true;
+            this.SehirAdi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SehirAdi1
+            // 
+            this.SehirAdi1.DataPropertyName = "SehirAdi1";
+            this.SehirAdi1.HeaderText = "Nereye";
+            this.SehirAdi1.MinimumWidth = 6;
+            this.SehirAdi1.Name = "SehirAdi1";
+            this.SehirAdi1.ReadOnly = true;
+            this.SehirAdi1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Tarih
+            // 
+            this.Tarih.DataPropertyName = "Tarih";
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Tarih.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Tarih.FillWeight = 200F;
+            this.Tarih.HeaderText = "Tarih";
+            this.Tarih.MinimumWidth = 6;
+            this.Tarih.Name = "Tarih";
+            this.Tarih.ReadOnly = true;
+            this.Tarih.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Saat
+            // 
+            this.Saat.DataPropertyName = "Saat";
+            this.Saat.HeaderText = "Saat";
+            this.Saat.MinimumWidth = 6;
+            this.Saat.Name = "Saat";
+            this.Saat.ReadOnly = true;
+            this.Saat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Fiyat
+            // 
+            this.Fiyat.DataPropertyName = "Fiyat";
+            this.Fiyat.HeaderText = "Fiyat";
+            this.Fiyat.MinimumWidth = 6;
+            this.Fiyat.Name = "Fiyat";
+            this.Fiyat.ReadOnly = true;
+            this.Fiyat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FrmListOfFlight
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(807, 395);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.ClientSize = new System.Drawing.Size(1064, 614);
+            this.Controls.Add(this.pnlListOfFlights);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmListOfFlight";
             this.Text = "FrmListOfFlight";
             this.Load += new System.EventHandler(this.FrmListOfFlight_Load);
-            this.Shown += new System.EventHandler(this.FrmListOfFlight_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbFlightBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_Flight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FlightDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource2)).EndInit();
+            this.pnlListOfFlights.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridListofFlight)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private db_FlightDataSet db_FlightDataSet;
+        private System.Windows.Forms.BindingSource ucuslarBindingSource;
+        private db_FlightDataSetTableAdapters.UcuslarTableAdapter ucuslarTableAdapter;
+        private System.Windows.Forms.BindingSource ucuslarBindingSource1;
+        private System.Windows.Forms.BindingSource dbFlightBindingSource;
+        private db_Flight db_Flight;
+        private System.Windows.Forms.BindingSource ucuslarBindingSource2;
+        private db_FlightTableAdapters.UcuslarTableAdapter ucuslarTableAdapter1;
+        private System.Windows.Forms.BindingSource ucuslarBindingSource3;
+        private System.Windows.Forms.BindingSource ucuslarBindingSource4;
+        private System.Windows.Forms.Panel pnlListOfFlights;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnBiletAl;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid gridListofFlight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UcusID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SirketAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SehirAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SehirAdi1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tarih;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fiyat;
     }
 }

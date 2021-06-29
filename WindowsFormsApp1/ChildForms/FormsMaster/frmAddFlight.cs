@@ -43,7 +43,7 @@ namespace WindowsFormsApp1.ChildForms.frmMaster
             }
             else
             {
-                Ucuslar.AddFlight(SirketID,SehirNeredenID,SehirNereyeID,cmbTarih.Value.ToString(),saat,fiyat);
+                Ucuslar.AddFlight(SirketID,SehirNeredenID,SehirNereyeID,cmbTarih.Value,saat,fiyat);
                 lblUyari.ForeColor = System.Drawing.Color.Green;
                 lblUyari.Text = "Başarı İle Eklendi";
 

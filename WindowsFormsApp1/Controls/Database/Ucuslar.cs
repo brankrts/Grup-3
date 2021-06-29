@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Database
 {
-    class Ucuslar
+    public class Ucuslar
     {
+
+
+        static Ucuslar instance;
+
+
+
+        public static Ucuslar Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Ucuslar();
+                return instance;
+            }
+        }
+
+        public Ucuslar() { }
+
         int _UcusID;
         public int UcusID
         {
@@ -40,12 +58,39 @@ namespace WindowsFormsApp1.Database
             get { return _Tarih; }
             set { _Tarih = value; }
         }
+        string _Saat;
+        public string Saat
+        {
+            get { return _Saat; }
+            set { _Saat = value; }
+        }
         int _Fiyat;
         public int Fiyat
         {
             get { return _Fiyat; }
             set { _Fiyat = value; }
         }
+        string _SehirAdiNereden;
+        public string SehirAdiNereden
+        {
+            get { return _SehirAdiNereden; }
+            set { _SehirAdiNereden = value; }
+        } 
+
+        string _SehirAdiNereye;
+        public string SehirAdiNereye
+        {
+            get { return _SehirAdiNereye; }
+            set { _SehirAdiNereye = value; }
+        }
+        string _SirketAdi;
+        public string SirketAdi
+        {
+            get { return _SirketAdi; }
+            set { _SirketAdi = value; }
+        }
+
+
     }
 
 }

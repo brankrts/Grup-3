@@ -84,10 +84,6 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 }
             }
         }
-
-
-
-
         public void Ekle(string SirketAdi)
         {
             try

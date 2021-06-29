@@ -328,6 +328,7 @@ namespace WindowsFormsApp1
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(1036, 90);
             this.pnlTitle.TabIndex = 1;
+            this.pnlTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitle_Paint);
             // 
             // ıconButton1
             // 

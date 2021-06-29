@@ -8,21 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace Proje1
+namespace WindowsFormsApp1.ChildForms
 {
-    public partial class MevcutUçuşlarım : Form
-    {   
-        public MevcutUçuşlarım()
+    public partial class Odeme1 : Form
+    {
+        public Odeme1()
         {
-           
-            
             InitializeComponent();
-        }
-        
-        private void MevcutUçuşlarım_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

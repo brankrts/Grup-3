@@ -48,7 +48,7 @@ namespace WindowsFormsApp1.ChildForms
 
         private void btnListOfFlight_Click(object sender, EventArgs e)
         {
-            open.OpenChildForm(new FrmListOfFlight(), pnlMasterChildForm);
+            open.OpenChildForm(new ChildForms.FormsMaster.MasterListOfFlights(), pnlMasterChildForm);
         }
     }
 }

@@ -7,12 +7,15 @@ using WindowsFormsApp1.Database;
 using WindowsFormsApp1.Controls.Database.DbConnect;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Controls.Database.DbConnect
 {
     class UcusProvider
     {
+        Ucuslar k;
         DbConnector dbcon = new DbConnector();
+        Ucuslar Current = Ucuslar.Instance;
         public UcusProvider() {
             dbcon.Baglan();
 
@@ -29,7 +32,7 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 SqlDataReader reader = dbcon.cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Ucuslar k = new Ucuslar();
+                    k = new Ucuslar();
                     k.UcusID = Convert.ToInt32(reader[0].ToString());
                     k.SirketID = Convert.ToInt32(reader[1].ToString());
                     k.Nereden = Convert.ToInt32(reader[2].ToString());
@@ -53,7 +56,80 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 }
             }
         }
-        public void AddFlight(int SirketID,int Nereden,int Nereye,string picker,string saat,int Fiyat)
+        public void ListFlight(int Nereden,int Nereye,DateTime Tarih,Bunifu.Framework.UI.BunifuCustomDataGrid Gridview,string komut)
+        {
+            DataSet ds;
+            SqlDataAdapter da;
+            try
+            {
+                
+
+                //MessageBox.Show(Current.Nereden.ToString()+Current.Nereye.ToString()+Tarih);
+                da = new SqlDataAdapter(komut, dbcon.con);
+                da.SelectCommand.Parameters.AddWithValue("@Nereden", Nereden);
+                da.SelectCommand.Parameters.AddWithValue("@Nereye", Nereye);
+                da.SelectCommand.Parameters.AddWithValue("@Tarih", Tarih);
+                ds = new DataSet();
+                da.Fill(ds);
+
+                Gridview.DataSource = ds.Tables[0];
+                
+                
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
+        public void ListFlightMaster( Bunifu.Framework.UI.BunifuCustomDataGrid Gridview, string komut)
+        {
+            DataSet ds;
+            SqlDataAdapter da;
+            try
+            {
+
+
+                ;
+                da = new SqlDataAdapter(komut, dbcon.con);
+                ds = new DataSet();
+                da.Fill(ds);
+
+                Gridview.DataSource = ds.Tables[0];
+
+
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
+        public void AddFlight(int SirketID, int Nereden, int Nereye, DateTime picker, string saat, int Fiyat)
         {
             try
             {

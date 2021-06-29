@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using WindowsFormsApp1.Database;
 using WindowsFormsApp1.Controls;
 using WindowsFormsApp1.Controls.Database;
 using WindowsFormsApp1.Controls.Database.DbConnect;
@@ -17,12 +18,15 @@ namespace WindowsFormsApp1
     public partial class frmMain : Form
     {
 
-        public static string CurrentTC;
+        public  string CurrentTC { get; set; }
+        
         private IconButton currentButton;
         private Panel leftBorderBtn;
         OpenChildForms open = new OpenChildForms();
-
+        CurrentValues Current =  CurrentValues.Instance; 
         MusteriProvider Musteri = new MusteriProvider();
+        
+        
         
         private struct RGBColors
         {
@@ -83,15 +87,20 @@ namespace WindowsFormsApp1
 
             }
         }
+        
+        // kaç login var?
+        //sadece teklogin
+        //bu form içerisindekifonk.  diğeri MusteriProvider class içerisindeki fonksiyon
         private void Login()
         {
+            
             if (Musteri.Login(txtTC, txtPassword))
             {
 
                 lblUyari.Text = "Giriş Başarılı.";
                 lblUyari.ForeColor = System.Drawing.Color.Green;
-                CurrentTC = txtTC.Text.ToString();
-                lblUyari.Text = CurrentTC;
+                CurrentTC = txtTC.Text.ToString(); 
+                
             }
             else
             {
@@ -135,7 +144,7 @@ namespace WindowsFormsApp1
             btnAcountInfo.Visible = true;
             btnLogin.Visible = false;
             btnRegister.Visible = false;
-            if (Musteri.IsMaster(CurrentTC)) {
+            if (Musteri.IsMaster(Current.MusteriID)) {
                 btnMaster.Visible = true;
                 open.OpenChildForm(new ChildForms.FormMaster(), pnlChildForm);
             }else {
@@ -240,6 +249,11 @@ namespace WindowsFormsApp1
         {
             Login();
             FormInitTrue();
+        }
+
+        private void pnlTitle_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

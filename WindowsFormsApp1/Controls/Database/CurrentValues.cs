@@ -7,8 +7,27 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Controls.Database.DbConnect
 {
-    class CurrentValues
+    
+
+    public class CurrentValues
     {
+        static CurrentValues instance;
+
+
+       
+        public static CurrentValues Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new CurrentValues();
+                return instance;
+            }
+        }
+
+        private CurrentValues() { } 
+
+       
         int _BiletID;
         public int BiletID
         {
@@ -35,6 +54,12 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
         {
             get { return _UcusID; }
             set { _UcusID = value; }
+        }
+        int _KoltukNO;
+        public int KoltukNO
+        {
+            get { return _KoltukNO; }
+            set { _KoltukNO = value; }
         }
 
 

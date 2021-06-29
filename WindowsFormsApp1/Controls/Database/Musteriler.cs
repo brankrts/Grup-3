@@ -6,9 +6,30 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Database
 {
-    class Musteriler
+    public class Musteriler
     {
-       
+
+        static Musteriler instance;
+
+
+
+        public static Musteriler Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new Musteriler();
+                return instance;
+            }
+        }
+
+        private Musteriler() { }
+
+
+
+
+
+
         int _MusteriID;
         public int MusteriID
         {

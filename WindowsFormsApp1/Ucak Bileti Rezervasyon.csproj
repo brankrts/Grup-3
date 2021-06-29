@@ -74,11 +74,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildForms\FormsMaster\MasterListOfFlights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FormsMaster\MasterListOfFlights.Designer.cs">
+      <DependentUpon>MasterListOfFlights.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForms\FrmAccountInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChildForms\FrmAccountInfo.Designer.cs">
       <DependentUpon>FrmAccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FrmBiletAlma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FrmBiletAlma.Designer.cs">
+      <DependentUpon>FrmBiletAlma.cs</DependentUpon>
     </Compile>
     <Compile Include="ChildForms\FrmListOfFlight.cs">
       <SubType>Form</SubType>
@@ -97,6 +109,12 @@
     </Compile>
     <Compile Include="ChildForms\FrmAvailableFlight.designer.cs">
       <DependentUpon>FrmAvailableFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Odeme1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Odeme1.Designer.cs">
+      <DependentUpon>Odeme1.cs</DependentUpon>
     </Compile>
     <Compile Include="ChildForms\UçuşGeçmişim.cs">
       <SubType>Form</SubType>
@@ -181,6 +199,11 @@
     <Compile Include="Controls\Database\Sirketler.cs" />
     <Compile Include="Controls\Database\Ucuslar.cs" />
     <Compile Include="Controls\Database\Ucus_Gecmisi.cs" />
+    <Compile Include="db_Flight.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Flight.xsd</DependentUpon>
+    </Compile>
     <Compile Include="db_FlightDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,8 +217,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForms\FormsMaster\MasterListOfFlights.resx">
+      <DependentUpon>MasterListOfFlights.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\FrmAccountInfo.resx">
       <DependentUpon>FrmAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FrmBiletAlma.resx">
+      <DependentUpon>FrmBiletAlma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\FrmListOfFlight.resx">
       <DependentUpon>FrmListOfFlight.cs</DependentUpon>
@@ -205,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\FrmAvailableFlight.resx">
       <DependentUpon>FrmAvailableFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Odeme1.resx">
+      <DependentUpon>Odeme1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\UçuşGeçmişim.resx">
       <DependentUpon>UçuşGeçmişim.cs</DependentUpon>
@@ -251,6 +283,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="db_Flight.xsc">
+      <DependentUpon>db_Flight.xsd</DependentUpon>
+    </None>
+    <None Include="db_Flight.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_Flight.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_Flight.xss">
+      <DependentUpon>db_Flight.xsd</DependentUpon>
+    </None>
     <None Include="db_FlightDataSet.xsc">
       <DependentUpon>db_FlightDataSet.xsd</DependentUpon>
     </None>
@@ -281,9 +324,8 @@
     <Content Include="Images\2 %282%29.png" />
     <Content Include="Images\3.png" />
     <Content Include="Images\4.png" />
+    <Content Include="Images\Koltuklar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\Busra\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
