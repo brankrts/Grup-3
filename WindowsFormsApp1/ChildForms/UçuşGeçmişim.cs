@@ -49,76 +49,11 @@ namespace Proje1
 
         private void UçuşGeçmişim_Shown(object sender, EventArgs e)
         {
-            bunifuCustomDataGrid1.Rows.Add(
+        }
 
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-               new object[] {
-
-                   "Pegasus",
-                   "Ankara",
-                   "İstanbul",
-                   "20:10:2004",
-                   "297"
-
-
-
-               });
-            bunifuCustomDataGrid1.Rows.Add(
-
-
-                new object[] {
-
-                   "Pegasus",
-                   "Ankara",
-                   "İstanbul",
-                   "20:10:2004",
-                   "297"
-
-
-
-                });
-            bunifuCustomDataGrid1.Rows.Add(
-
-
-                new object[] {
-
-                   "THY",
-                   "Ankara",
-                   "İZMİR",
-                   "20:10:2004",
-                   "500"
-
-
-
-                });
-            bunifuCustomDataGrid1.Rows.Add(
-
-
-                new object[] {
-
-                   "THY",
-                   "Ankara",
-                   "İZMİR",
-                   "20:10:2004",
-                   "500"
-
-
-
-                });
-            bunifuCustomDataGrid1.Rows.Add(
-
-
-                new object[] {
-
-                   "THY",
-                   "Ankara",
-                   "İZMİR",
-                   "20:10:2004",
-                   "500"
-
-
-
-                });
         }
     }
 }

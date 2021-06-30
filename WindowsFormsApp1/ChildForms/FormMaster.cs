@@ -50,5 +50,12 @@ namespace WindowsFormsApp1.ChildForms
         {
             open.OpenChildForm(new ChildForms.FormsMaster.MasterListOfFlights(), pnlMasterChildForm);
         }
+
+        private void btnBildirim_Click(object sender, EventArgs e)
+        {
+            FrmBildirimEkle FrmBildirimEkle = new FrmBildirimEkle();
+            FrmBildirimEkle.Show();
+            FrmBildirimEkle.Focus();
+        }
     }
 }

@@ -18,13 +18,13 @@ namespace WindowsFormsApp1.ChildForms
 
         private void SetCurrentValues() {
 
-            Current.UcusID = Convert.ToInt32(gridListofFlight.CurrentRow.Cells[0].Value);
-            ucus.SirketAdi = gridListofFlight.CurrentRow.Cells[1].Value.ToString();
-            ucus.SehirAdiNereden = gridListofFlight.CurrentRow.Cells[2].Value.ToString();
-            ucus.SehirAdiNereye = gridListofFlight.CurrentRow.Cells[3].Value.ToString();
-            ucus.Tarih = DateTime.Parse(gridListofFlight.CurrentRow.Cells[4].Value.ToString());
-            ucus.Saat = gridListofFlight.CurrentRow.Cells[5].Value.ToString();
-            ucus.Fiyat = Convert.ToInt32(gridListofFlight.CurrentRow.Cells[6].Value);
+            Current.UcusID = Convert.ToInt32(gridmaster.CurrentRow.Cells[0].Value);
+            ucus.SirketAdi = gridmaster.CurrentRow.Cells[1].Value.ToString();
+            ucus.SehirAdiNereden = gridmaster.CurrentRow.Cells[2].Value.ToString();
+            ucus.SehirAdiNereye = gridmaster.CurrentRow.Cells[3].Value.ToString();
+            ucus.Tarih = DateTime.Parse(gridmaster.CurrentRow.Cells[4].Value.ToString());
+            ucus.Saat = gridmaster.CurrentRow.Cells[5].Value.ToString();
+            ucus.Fiyat = Convert.ToInt32(gridmaster.CurrentRow.Cells[6].Value);
 
 
         }
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1.ChildForms
         {
 
            
-           Flights.ListFlight(ucus.Nereden,ucus.Nereye,ucus.Tarih,gridListofFlight,komut);
+           Flights.ListFlight(ucus.Nereden,ucus.Nereye,ucus.Tarih,gridmaster,komut);
             
         }
 

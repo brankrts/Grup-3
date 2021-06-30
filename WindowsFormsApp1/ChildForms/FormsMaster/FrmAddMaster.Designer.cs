@@ -98,7 +98,7 @@ namespace WindowsFormsApp1.ChildForms.FrmMaster
             "Kadın",
             "Erkek"});
             this.cbmCinsiyet.ItemsAppearance.Parent = this.cbmCinsiyet;
-            this.cbmCinsiyet.Location = new System.Drawing.Point(443, 123);
+            this.cbmCinsiyet.Location = new System.Drawing.Point(442, 128);
             this.cbmCinsiyet.Margin = new System.Windows.Forms.Padding(4);
             this.cbmCinsiyet.Name = "cbmCinsiyet";
             this.cbmCinsiyet.ShadowDecoration.Parent = this.cbmCinsiyet;
@@ -275,7 +275,7 @@ namespace WindowsFormsApp1.ChildForms.FrmMaster
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(439, 167);
+            this.label9.Location = new System.Drawing.Point(439, 171);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 17);
             this.label9.TabIndex = 85;
@@ -297,7 +297,7 @@ namespace WindowsFormsApp1.ChildForms.FrmMaster
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(211, 167);
+            this.label11.Location = new System.Drawing.Point(211, 171);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 17);
             this.label11.TabIndex = 83;

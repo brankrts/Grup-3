@@ -20,7 +20,8 @@ namespace WindowsFormsApp1.ChildForms
         int Koltukno;
         Ucuslar ucus = Ucuslar.Instance;
         CurrentValues Current = CurrentValues.Instance;
-        
+        OpenChildForms open = new OpenChildForms();
+        KoltukProvider koltuklar = new KoltukProvider();
         
 
         public FrmBiletAlma()
@@ -35,6 +36,7 @@ namespace WindowsFormsApp1.ChildForms
             lblNereye.Text = ucus.SehirAdiNereye;
             lblTarih.Text = ucus.Tarih.ToLongDateString();
             lblSaat.Text = ucus.Saat;
+            btnSatıinAl0.Enabled = false;
   
 
         }
@@ -43,13 +45,16 @@ namespace WindowsFormsApp1.ChildForms
             {
                 if (x is Guna2CircleButton)
                 {
+                    
 
-                    ((Guna2CircleButton)x).FillColor = System.Drawing.Color.LightGray;
+                        ((Guna2CircleButton)x).FillColor = System.Drawing.Color.LightGray;
+                  
                 }
             }
             Koltukno = Convert.ToInt32(Button.Text);
             Current.KoltukNO = Koltukno;
             Button.FillColor = System.Drawing.Color.Green;
+            btnSatıinAl0.Enabled = true;
         
         }
         private void guna2CircleButton4_Click(object sender, EventArgs e)
@@ -61,12 +66,23 @@ namespace WindowsFormsApp1.ChildForms
         {
             SetLabelValues();
             
+            foreach (Control x in pnlBiletAl.Controls)
+            {
+                if (x is Guna2CircleButton)
+                {
+
+                    
+                    koltuklar.KoltukRenkListele(((Guna2CircleButton)x),pnlBiletAl,Current.UcusID);
+                }
+            }
+            
+            
 
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -122,6 +138,11 @@ namespace WindowsFormsApp1.ChildForms
         private void btn12_Click(object sender, EventArgs e)
         {
             SetKoltukNO(btn12);
+        }
+
+        private void btnSatıinAl0_Click(object sender, EventArgs e)
+        {
+            open.OpenChildForm(new ChildForms.Odeme(), pnlBiletAl);
         }
     }
 }

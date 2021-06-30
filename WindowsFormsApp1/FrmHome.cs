@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using WindowsFormsApp1.ChildForms;
 using WindowsFormsApp1.Database;
 using WindowsFormsApp1.Controls;
 using WindowsFormsApp1.Controls.Database;
 using WindowsFormsApp1.Controls.Database.DbConnect;
+using System.Threading;
 
 namespace WindowsFormsApp1
 {
@@ -25,6 +27,7 @@ namespace WindowsFormsApp1
         OpenChildForms open = new OpenChildForms();
         CurrentValues Current =  CurrentValues.Instance; 
         MusteriProvider Musteri = new MusteriProvider();
+        UcusProvider ucus = new UcusProvider();
         
         
         
@@ -87,10 +90,7 @@ namespace WindowsFormsApp1
 
             }
         }
-        
-        // kaç login var?
-        //sadece teklogin
-        //bu form içerisindekifonk.  diğeri MusteriProvider class içerisindeki fonksiyon
+  
         private void Login()
         {
             
@@ -99,7 +99,8 @@ namespace WindowsFormsApp1
 
                 lblUyari.Text = "Giriş Başarılı.";
                 lblUyari.ForeColor = System.Drawing.Color.Green;
-                CurrentTC = txtTC.Text.ToString(); 
+                CurrentTC = txtTC.Text.ToString();
+                GetBildirimler();
                 
             }
             else
@@ -230,9 +231,34 @@ namespace WindowsFormsApp1
         private void frmMain_Load(object sender, EventArgs e)
         {
             comboServer.SelectedIndex = 0;
+            SetBildirimler();
             
         }
+        private void GetBildirimler() {
 
+            ucus.ListOfBildirimler();
+            if (Current.RowCount!=0) {
+                btnBildirimSayac.Text = Current.RowCount.ToString();
+                btnBildirimSayac.BaseColor = System.Drawing.Color.Red;
+                btnBildirimSayac.Visible = true;
+                btnBildirim.Visible = true;
+
+            }else
+            {
+                btnBildirimSayac.Text = "0";
+                btnBildirimSayac.BaseColor = System.Drawing.Color.LightGray;
+            }
+
+
+        }
+        private void SetBildirimler() {
+
+            
+            btnBildirimSayac.Visible = false;
+            btnBildirim.Visible = false;
+        
+        
+        }
         private void pnlChildForm_Paint(object sender, PaintEventArgs e)
         {
 
@@ -254,6 +280,21 @@ namespace WindowsFormsApp1
         private void pnlTitle_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnBildirim_Click(object sender, EventArgs e)
+        {
+            btnBildirimSayac.Text = "0";
+            btnBildirimSayac.BaseColor = System.Drawing.Color.LightGray;
+            BildirimGoruntule Bildirimler = new BildirimGoruntule();
+            Bildirimler.Show();
+            Bildirimler.Focus();
+            
+        }
+
+        private void comboServer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Server.Text = comboServer.SelectedItem.ToString() + " Serverine Bağlanıldı";
         }
     }
 }

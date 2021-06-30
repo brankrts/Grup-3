@@ -8,11 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using WindowsFormsApp1.Controls;
+using WindowsFormsApp1.Database;
+using WindowsFormsApp1.Controls.Database.DbConnect;
 
 namespace WindowsFormsApp1.ChildForms
 {
     public partial class FrmMonth : Form
     {
+        SehirlerProvider Sehirler = new SehirlerProvider();
+        Ucuslar ucus = Ucuslar.Instance;
+        UcusProvider ucusProvider = new UcusProvider();
+        private void GetValues()
+        {
+
+            int NeredenID = Sehirler.GetID(cmbNereden.SelectedItem.ToString());
+            int NereyeID = Sehirler.GetID(cmbNereye.SelectedItem.ToString());
+            ucus.Nereden = NeredenID;
+            ucus.Nereye = NereyeID;
+            
+    
+        }
         public FrmMonth()
         {
             InitializeComponent();
@@ -21,23 +37,24 @@ namespace WindowsFormsApp1.ChildForms
         private void metroButton1_Click(object sender, EventArgs e)
         {
             
-                  }
+         }
 
         private void FrmMonth_Load(object sender, EventArgs e)
         {
-            Title title = new Title();
-            title.Font = new Font("Arial", 14, FontStyle.Bold);
-            title.Text = "Ankara-- > İstabul Seferleri";
-            chart1.Titles.Add(title);
-            chart1.Series["THY"].Points.AddY(295);
-            chart1.Series["PGS"].Points.AddY(350);
-            chart1.Series["AJET"].Points.AddY(425);
-            chart1.Series["THY"].Points.AddY(293);
-            chart1.Series["PGS"].Points.AddY(546);
-            chart1.Series["AJET"].Points.AddY(859);
-            chart1.Series["THY"].Points.AddY(256);
-            chart1.Series["PGS"].Points.AddY(110);
-            chart1.Series["AJET"].Points.AddY(987);
+            Sehirler.ListOfSehirler(cmbNereden);
+            Sehirler.ListOfSehirler(cmbNereye);
+            cmbNereden.SelectedIndex = 1;
+            cmbNereye.SelectedIndex = 4;
+            GetValues();
+            ucusProvider.ListOfCharts(chart1, ucus.Nereden, ucus.Nereye, lblNereden, lblNereye);
+
+        }
+
+        private void btnSearchFlight_Click(object sender, EventArgs e)
+
+        {
+            GetValues();
+            ucusProvider.ListOfCharts(chart1,ucus.Nereden,ucus.Nereye,lblNereden,lblNereye);
         }
     }
 }

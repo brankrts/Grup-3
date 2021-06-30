@@ -8,6 +8,8 @@ using WindowsFormsApp1.Controls.Database.DbConnect;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
 
 namespace WindowsFormsApp1.Controls.Database.DbConnect
 {
@@ -15,7 +17,9 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
     {
         Ucuslar k;
         DbConnector dbcon = new DbConnector();
-        Ucuslar Current = Ucuslar.Instance;
+        Ucuslar Current1 = Ucuslar.Instance;
+        CurrentValues current = CurrentValues.Instance;
+        SqlDataReader reader;
         public UcusProvider() {
             dbcon.Baglan();
 
@@ -56,13 +60,13 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 }
             }
         }
-        public void ListFlight(int Nereden,int Nereye,DateTime Tarih,Bunifu.Framework.UI.BunifuCustomDataGrid Gridview,string komut)
+        public void ListFlight(int Nereden, int Nereye, DateTime Tarih, Bunifu.Framework.UI.BunifuCustomDataGrid Gridview, string komut)
         {
             DataSet ds;
             SqlDataAdapter da;
             try
             {
-                
+
 
                 //MessageBox.Show(Current.Nereden.ToString()+Current.Nereye.ToString()+Tarih);
                 da = new SqlDataAdapter(komut, dbcon.con);
@@ -73,8 +77,178 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 da.Fill(ds);
 
                 Gridview.DataSource = ds.Tables[0];
+
+
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
+
+
+        public void ListOfBiletler(int MusteriID, Bunifu.Framework.UI.BunifuCustomDataGrid Gridview)
+        {
+
+            string komut1 = "SELECT Sirketler.SirketAdi,s1.SehirAdi,s2.SehirAdi,Ucuslar.Tarih,Ucuslar.Saat,Ucuslar.Fiyat " +
+            "FROM Biletler " +
+            "INNER JOIN Musteriler ON Biletler.MusteriID = Musteriler.MusteriID " +
+            "INNER JOIN Ucuslar ON Biletler.UcusID = Ucuslar.UcusID " +
+            "INNER JOIN Sirketler ON Ucuslar.SirketID = Sirketler.SirketID " +
+            "INNER JOIN Sehirler as s1 ON Ucuslar.Nereden = s1.SehirID " +
+            "INNER JOIN Sehirler as s2 ON Ucuslar.Nereye = s2.SehirID " +
+            "where Musteriler.MusteriID = @MusteriID";
+            DataSet ds;
+            SqlDataAdapter da;
+            try
+            {
+
+
+
+                da = new SqlDataAdapter(komut1, dbcon.con);
+                da.SelectCommand.Parameters.AddWithValue("@MusteriID", MusteriID);
+
+                ds = new DataSet();
+                da.Fill(ds);
+
+                Gridview.DataSource = ds.Tables[0];
+
+
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
+        public void ListOfCharts(Chart chart, int Nereden, int Nereye, Label lblNereden, Label lblNereye)
+        {
+            foreach (var series in chart.Series)
+            {
+                series.Points.Clear();
+            }
+
+            try
+            {
+                string komut = "SELECT Sirketler.SirketAdi ,s1.SehirAdi,s2.SehirAdi,Ucuslar.Fiyat,Ucuslar.Tarih " +
+                                "from Ucuslar " +
+                                "inner join Sirketler on Ucuslar.SirketID = Sirketler.SirketID " +
+                                "inner join Sehirler s1 on Ucuslar.Nereden = s1.SehirID " +
+                                "inner join Sehirler s2 on Ucuslar.Nereye = s2.SehirID " +
+                                "where Ucuslar.Nereden =@Nereden and Ucuslar.Nereye =@Nereye";
+
+
+
+                dbcon.cmd = new SqlCommand(komut, dbcon.con);
+                dbcon.cmd.Parameters.AddWithValue("@Nereden", Nereden);
+                dbcon.cmd.Parameters.AddWithValue("@Nereye", Nereye);
+                dbcon.con.Open();
+                reader = dbcon.cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DateTime tarih = DateTime.Parse(reader["Tarih"].ToString());
+                    
+                    
+
+                    chart.Series[reader["SirketAdi"].ToString()].Points.AddXY(tarih.ToLongDateString(), reader["Fiyat"].ToString());
+                    lblNereden.Text = reader["SehirAdi"].ToString();
+                    lblNereye.Text = reader[2].ToString();
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
+        public void ListOfBildirimlerAddGrid(Bunifu.Framework.UI.BunifuCustomDataGrid Gridview)
+        {
+            DataSet ds;
+            SqlDataAdapter da;
+            string komut = "SELECT *FROM Bildirimler";
+            try
+            {
+
+
+                ;
+                da = new SqlDataAdapter(komut, dbcon.con);
+                ds = new DataSet();
+                da.Fill(ds);
+                current.RowCount = ds.Tables[0].Rows.Count;
+                Gridview.DataSource = ds.Tables[0];
                 
+
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
+        public void ListOfBildirimler()
+        {
+            DataSet ds;
+            SqlDataAdapter da;
+            string komut = "SELECT *FROM Bildirimler";
+            try
+            {
+
+
+                ;
+                da = new SqlDataAdapter(komut, dbcon.con);
+                ds = new DataSet();
+                da.Fill(ds);
+                current.RowCount = ds.Tables[0].Rows.Count;
                 
+
+
 
 
 

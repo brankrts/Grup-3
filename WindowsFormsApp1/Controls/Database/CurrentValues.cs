@@ -34,6 +34,12 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
             get { return _BiletID; }
             set { _BiletID = value; }
         }
+        int _RowCount;
+        public int RowCount
+        {
+            get { return _RowCount; }
+            set { _RowCount = value; }
+        }
         string _CurrentTC;
         public string CurrentTC
         {

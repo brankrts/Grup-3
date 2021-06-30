@@ -103,7 +103,7 @@ namespace WindowsFormsApp1.Controls.Database
             try
             {
 
-                dbcon.cmd = new SqlCommand("Update [Musteriler] set (MusteriAdi,MusteriSoyadi,MusteriTel,MusteriMail) values (@MusteriAdi,@MusteriSoyadi,@MusteriTel,@MusteriMail) where MusteriID=@MusteriID", dbcon.con);
+                dbcon.cmd = new SqlCommand("UPDATE Musteriler SET (MusteriAdi,MusteriSoyadi,MusteriTel,MusteriMail) VALUES (@MusteriAdi,@MusteriSoyadi,@MusteriTel,@MusteriMail) WHERE MusteriID=@MusteriID", dbcon.con);
                 dbcon.cmd.Parameters.AddWithValue("@MusteriID", MusteriID);
                 dbcon.cmd.Parameters.AddWithValue("@MusteriAdi", MusteriAdi); 
                 dbcon.cmd.Parameters.AddWithValue("@MusteriSoyadi", MusteriSoyadi);
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1.Controls.Database
                 if (reader.Read())
                 {   
                     current.MusteriID = Convert.ToInt32(reader["MusteriID"]);
-                    MessageBox.Show(current.MusteriID.ToString());
+                    
                     return true;
                     
 

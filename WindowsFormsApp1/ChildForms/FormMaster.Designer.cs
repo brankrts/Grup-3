@@ -34,6 +34,7 @@ namespace WindowsFormsApp1.ChildForms
             this.btnAddMaster = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.pnlMasterChildForm = new System.Windows.Forms.Panel();
+            this.btnBildirim = new FontAwesome.Sharp.IconButton();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,8 +57,8 @@ namespace WindowsFormsApp1.ChildForms
             this.btnAddFlight.ImageSize = new System.Drawing.Size(52, 52);
             this.btnAddFlight.LineBottom = 2;
             this.btnAddFlight.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAddFlight.Location = new System.Drawing.Point(47, 26);
-            this.btnAddFlight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddFlight.Location = new System.Drawing.Point(63, 32);
+            this.btnAddFlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddFlight.Name = "btnAddFlight";
             this.btnAddFlight.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnAddFlight.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -65,7 +66,7 @@ namespace WindowsFormsApp1.ChildForms
             this.btnAddFlight.OnHoverImage = null;
             this.btnAddFlight.OnHoverLineColor = System.Drawing.Color.White;
             this.btnAddFlight.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddFlight.Size = new System.Drawing.Size(119, 32);
+            this.btnAddFlight.Size = new System.Drawing.Size(159, 39);
             this.btnAddFlight.TabIndex = 0;
             this.btnAddFlight.Text = "Uçuş Ekle";
             this.btnAddFlight.Click += new System.EventHandler(this.btnAddFlight_Click);
@@ -89,8 +90,8 @@ namespace WindowsFormsApp1.ChildForms
             this.btnListOfFlight.ImageSize = new System.Drawing.Size(52, 52);
             this.btnListOfFlight.LineBottom = 2;
             this.btnListOfFlight.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnListOfFlight.Location = new System.Drawing.Point(316, 26);
-            this.btnListOfFlight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListOfFlight.Location = new System.Drawing.Point(338, 32);
+            this.btnListOfFlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnListOfFlight.Name = "btnListOfFlight";
             this.btnListOfFlight.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnListOfFlight.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -98,7 +99,7 @@ namespace WindowsFormsApp1.ChildForms
             this.btnListOfFlight.OnHoverImage = null;
             this.btnListOfFlight.OnHoverLineColor = System.Drawing.Color.White;
             this.btnListOfFlight.OnPressedColor = System.Drawing.Color.Black;
-            this.btnListOfFlight.Size = new System.Drawing.Size(122, 37);
+            this.btnListOfFlight.Size = new System.Drawing.Size(163, 46);
             this.btnListOfFlight.TabIndex = 1;
             this.btnListOfFlight.Text = "Uçuşları Listele";
             this.btnListOfFlight.Click += new System.EventHandler(this.btnListOfFlight_Click);
@@ -122,8 +123,8 @@ namespace WindowsFormsApp1.ChildForms
             this.btnAddMaster.ImageSize = new System.Drawing.Size(52, 52);
             this.btnAddMaster.LineBottom = 2;
             this.btnAddMaster.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAddMaster.Location = new System.Drawing.Point(568, 26);
-            this.btnAddMaster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddMaster.Location = new System.Drawing.Point(610, 32);
+            this.btnAddMaster.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddMaster.Name = "btnAddMaster";
             this.btnAddMaster.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnAddMaster.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -131,7 +132,7 @@ namespace WindowsFormsApp1.ChildForms
             this.btnAddMaster.OnHoverImage = null;
             this.btnAddMaster.OnHoverLineColor = System.Drawing.Color.White;
             this.btnAddMaster.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddMaster.Size = new System.Drawing.Size(122, 37);
+            this.btnAddMaster.Size = new System.Drawing.Size(163, 46);
             this.btnAddMaster.TabIndex = 2;
             this.btnAddMaster.Text = "Yönetici Ekle";
             this.btnAddMaster.Click += new System.EventHandler(this.btnAddMaster_Click);
@@ -139,40 +140,57 @@ namespace WindowsFormsApp1.ChildForms
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.btnBildirim);
             this.guna2ShadowPanel1.Controls.Add(this.btnAddFlight);
             this.guna2ShadowPanel1.Controls.Add(this.btnAddMaster);
             this.guna2ShadowPanel1.Controls.Add(this.btnListOfFlight);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(65)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 20;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Gray;
             this.guna2ShadowPanel1.ShadowDepth = 180;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(833, 111);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1111, 137);
             this.guna2ShadowPanel1.TabIndex = 3;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // pnlMasterChildForm
             // 
-            this.pnlMasterChildForm.Location = new System.Drawing.Point(0, 116);
+            this.pnlMasterChildForm.Location = new System.Drawing.Point(0, 143);
+            this.pnlMasterChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMasterChildForm.Name = "pnlMasterChildForm";
-            this.pnlMasterChildForm.Size = new System.Drawing.Size(823, 434);
+            this.pnlMasterChildForm.Size = new System.Drawing.Size(1097, 534);
             this.pnlMasterChildForm.TabIndex = 4;
             this.pnlMasterChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMasterChildForm_Paint);
             // 
+            // btnBildirim
+            // 
+            this.btnBildirim.FlatAppearance.BorderSize = 0;
+            this.btnBildirim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBildirim.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBildirim.IconChar = FontAwesome.Sharp.IconChar.Exclamation;
+            this.btnBildirim.IconColor = System.Drawing.Color.White;
+            this.btnBildirim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBildirim.Location = new System.Drawing.Point(898, 32);
+            this.btnBildirim.Name = "btnBildirim";
+            this.btnBildirim.Size = new System.Drawing.Size(46, 52);
+            this.btnBildirim.TabIndex = 5;
+            this.btnBildirim.UseVisualStyleBackColor = true;
+            this.btnBildirim.Click += new System.EventHandler(this.btnBildirim_Click);
+            // 
             // FormMaster
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(833, 561);
+            this.ClientSize = new System.Drawing.Size(1111, 690);
             this.Controls.Add(this.pnlMasterChildForm);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMaster";
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -186,5 +204,6 @@ namespace WindowsFormsApp1.ChildForms
         private Guna.UI.WinForms.GunaAdvenceTileButton btnAddMaster;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Panel pnlMasterChildForm;
+        private FontAwesome.Sharp.IconButton btnBildirim;
     }
 }

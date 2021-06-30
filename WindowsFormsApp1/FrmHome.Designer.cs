@@ -46,6 +46,7 @@ namespace WindowsFormsApp1
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.pnlTitle = new System.Windows.Forms.Panel();
+            this.btnBildirim = new FontAwesome.Sharp.IconButton();
             this.ıconButton1 = new FontAwesome.Sharp.IconButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnTitle = new FontAwesome.Sharp.IconButton();
@@ -63,6 +64,8 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnBildirimSayac = new Guna.UI.WinForms.GunaCircleButton();
+            this.lblServer = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -142,6 +145,7 @@ namespace WindowsFormsApp1
             this.comboServer.Size = new System.Drawing.Size(156, 27);
             this.comboServer.TabIndex = 8;
             this.comboServer.UseSelectable = true;
+            this.comboServer.SelectedIndexChanged += new System.EventHandler(this.comboServer_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -319,6 +323,9 @@ namespace WindowsFormsApp1
             // pnlTitle
             // 
             this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.pnlTitle.Controls.Add(this.lblServer);
+            this.pnlTitle.Controls.Add(this.btnBildirim);
+            this.pnlTitle.Controls.Add(this.btnBildirimSayac);
             this.pnlTitle.Controls.Add(this.ıconButton1);
             this.pnlTitle.Controls.Add(this.lblTitle);
             this.pnlTitle.Controls.Add(this.btnTitle);
@@ -329,6 +336,21 @@ namespace WindowsFormsApp1
             this.pnlTitle.Size = new System.Drawing.Size(1036, 90);
             this.pnlTitle.TabIndex = 1;
             this.pnlTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitle_Paint);
+            // 
+            // btnBildirim
+            // 
+            this.btnBildirim.FlatAppearance.BorderSize = 0;
+            this.btnBildirim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBildirim.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBildirim.IconChar = FontAwesome.Sharp.IconChar.Exclamation;
+            this.btnBildirim.IconColor = System.Drawing.Color.White;
+            this.btnBildirim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBildirim.Location = new System.Drawing.Point(828, 22);
+            this.btnBildirim.Name = "btnBildirim";
+            this.btnBildirim.Size = new System.Drawing.Size(29, 52);
+            this.btnBildirim.TabIndex = 3;
+            this.btnBildirim.UseVisualStyleBackColor = true;
+            this.btnBildirim.Click += new System.EventHandler(this.btnBildirim_Click);
             // 
             // ıconButton1
             // 
@@ -549,6 +571,41 @@ namespace WindowsFormsApp1
             this.label7.TabIndex = 62;
             this.label7.Text = "Şifre :";
             // 
+            // btnBildirimSayac
+            // 
+            this.btnBildirimSayac.AnimationHoverSpeed = 0.07F;
+            this.btnBildirimSayac.AnimationSpeed = 0.03F;
+            this.btnBildirimSayac.BackColor = System.Drawing.Color.Transparent;
+            this.btnBildirimSayac.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnBildirimSayac.BorderColor = System.Drawing.Color.Black;
+            this.btnBildirimSayac.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBildirimSayac.Enabled = false;
+            this.btnBildirimSayac.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBildirimSayac.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBildirimSayac.ForeColor = System.Drawing.Color.White;
+            this.btnBildirimSayac.Image = null;
+            this.btnBildirimSayac.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnBildirimSayac.Location = new System.Drawing.Point(861, 45);
+            this.btnBildirimSayac.Name = "btnBildirimSayac";
+            this.btnBildirimSayac.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnBildirimSayac.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBildirimSayac.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBildirimSayac.OnHoverImage = null;
+            this.btnBildirimSayac.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBildirimSayac.Size = new System.Drawing.Size(33, 29);
+            this.btnBildirimSayac.TabIndex = 63;
+            this.btnBildirimSayac.Text = "2";
+            // 
+            // lblServer
+            // 
+            this.lblServer.AutoSize = true;
+            this.lblServer.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblServer.ForeColor = System.Drawing.Color.Lime;
+            this.lblServer.Location = new System.Drawing.Point(436, 40);
+            this.lblServer.Name = "lblServer";
+            this.lblServer.Size = new System.Drawing.Size(0, 17);
+            this.lblServer.TabIndex = 74;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -609,6 +666,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
+        private FontAwesome.Sharp.IconButton btnBildirim;
+        private Guna.UI.WinForms.GunaCircleButton btnBildirimSayac;
+        private System.Windows.Forms.Label lblServer;
     }
 }
 

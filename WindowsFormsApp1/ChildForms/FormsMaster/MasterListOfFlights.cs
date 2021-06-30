@@ -30,7 +30,12 @@ namespace WindowsFormsApp1.ChildForms.FormsMaster
 
         private void MasterListOfFlights_Load(object sender, EventArgs e)
         {
-            Flights.ListFlightMaster(gridMaster,komut);
+            Flights.ListFlightMaster(gridListofFlight,komut);
+        }
+
+        private void gridListofFlight_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

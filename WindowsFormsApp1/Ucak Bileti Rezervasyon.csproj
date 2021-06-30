@@ -74,6 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildForms\BildirimGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\BildirimGoruntule.Designer.cs">
+      <DependentUpon>BildirimGoruntule.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForms\FormsMaster\MasterListOfFlights.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +116,11 @@
     <Compile Include="ChildForms\FrmAvailableFlight.designer.cs">
       <DependentUpon>FrmAvailableFlight.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForms\Odeme1.cs">
+    <Compile Include="ChildForms\Odeme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForms\Odeme1.Designer.cs">
-      <DependentUpon>Odeme1.cs</DependentUpon>
+    <Compile Include="ChildForms\Odeme.Designer.cs">
+      <DependentUpon>Odeme.cs</DependentUpon>
     </Compile>
     <Compile Include="ChildForms\UçuşGeçmişim.cs">
       <SubType>Form</SubType>
@@ -209,6 +215,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_FlightDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmBildirimEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBildirimEkle.Designer.cs">
+      <DependentUpon>FrmBildirimEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +229,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForms\BildirimGoruntule.resx">
+      <DependentUpon>BildirimGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\FormsMaster\MasterListOfFlights.resx">
       <DependentUpon>MasterListOfFlights.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,8 +250,8 @@
     <EmbeddedResource Include="ChildForms\FrmAvailableFlight.resx">
       <DependentUpon>FrmAvailableFlight.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForms\Odeme1.resx">
-      <DependentUpon>Odeme1.cs</DependentUpon>
+    <EmbeddedResource Include="ChildForms\Odeme.resx">
+      <DependentUpon>Odeme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\UçuşGeçmişim.resx">
       <DependentUpon>UçuşGeçmişim.cs</DependentUpon>
@@ -270,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\FrmWhoWeAre.resx">
       <DependentUpon>FrmWhoWeAre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBildirimEkle.resx">
+      <DependentUpon>FrmBildirimEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
@@ -324,6 +342,9 @@
     <Content Include="Images\2 %282%29.png" />
     <Content Include="Images\3.png" />
     <Content Include="Images\4.png" />
+    <Content Include="Images\bag-front-view.png" />
+    <Content Include="Images\credit-card-interest.png" />
+    <Content Include="Images\icons8-circle-50.png" />
     <Content Include="Images\Koltuklar.png" />
   </ItemGroup>
   <ItemGroup />

@@ -12,7 +12,8 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
 {
     class BiletlerProvider
     {
-
+        SqlDataReader reader;
+        CurrentValues Current = CurrentValues.Instance;
         DbConnector dbcon = new DbConnector();
         public BiletlerProvider()
         {
@@ -53,7 +54,36 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
                 }
             }
         }
+        public void GetID(int MusteriID)
+        {
 
+            try
+            {
+
+                dbcon.cmd = new SqlCommand("SELECT BiletID FROM [Bileter] where MusteriID=@MusteriID", dbcon.con);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriID", MusteriID);
+                dbcon.con.Open();
+                reader = dbcon.cmd.ExecuteReader();
+                reader.Read();
+                Current.BiletID = Convert.ToInt32(reader["BiletID"]);
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+        }
         public void Ekle(int UcusID, int MusteriID, int KoltukID)
         {
             try
@@ -101,7 +131,35 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
             }
 
         }
+        public void BiletEkle(int UcusID,int MusteriID, int KoltukID)
+        {
+            try
+            {
 
+                dbcon.cmd = new SqlCommand("INSERT INTO [Biletler] (UcusID,MusteriID,KoltukID) values (@UcusID,@MusteriID,@KoltukID)", dbcon.con);
+
+
+                dbcon.cmd.Parameters.AddWithValue("@UcusID", UcusID);
+                dbcon.cmd.Parameters.AddWithValue("@MusteriID", MusteriID);
+                dbcon.cmd.Parameters.AddWithValue("@KoltukID", KoltukID);
+                dbcon.con.Open();
+                dbcon.cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
         public void Sil(Biletler b)
         {
             try

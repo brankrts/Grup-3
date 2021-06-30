@@ -48,7 +48,7 @@ namespace WindowsFormsApp1.ChildForms
             this.ucuslarTableAdapter1 = new WindowsFormsApp1.db_FlightTableAdapters.UcuslarTableAdapter();
             this.pnlListOfFlights = new System.Windows.Forms.Panel();
             this.btnBiletAl = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.gridListofFlight = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.gridmaster = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.UcusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SirketAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SehirAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1.ChildForms
             ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource2)).BeginInit();
             this.pnlListOfFlights.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridListofFlight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridmaster)).BeginInit();
             this.SuspendLayout();
             // 
             // ucuslarBindingSource4
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1.ChildForms
             // pnlListOfFlights
             // 
             this.pnlListOfFlights.Controls.Add(this.btnBiletAl);
-            this.pnlListOfFlights.Controls.Add(this.gridListofFlight);
+            this.pnlListOfFlights.Controls.Add(this.gridmaster);
             this.pnlListOfFlights.Location = new System.Drawing.Point(8, 12);
             this.pnlListOfFlights.Name = "pnlListOfFlights";
             this.pnlListOfFlights.Size = new System.Drawing.Size(1053, 598);
@@ -143,25 +143,25 @@ namespace WindowsFormsApp1.ChildForms
             this.btnBiletAl.Text = "Bilet Al";
             this.btnBiletAl.Click += new System.EventHandler(this.btnBiletAl_Click);
             // 
-            // gridListofFlight
+            // gridmaster
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.gridListofFlight.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridListofFlight.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridListofFlight.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.gridListofFlight.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridListofFlight.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.gridListofFlight.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridmaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridmaster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridmaster.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.gridmaster.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridmaster.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridmaster.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridListofFlight.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridListofFlight.ColumnHeadersHeight = 40;
-            this.gridListofFlight.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridListofFlight.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridmaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridmaster.ColumnHeadersHeight = 40;
+            this.gridmaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridmaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UcusID,
             this.SirketAdi,
             this.SehirAdi,
@@ -178,39 +178,39 @@ namespace WindowsFormsApp1.ChildForms
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridListofFlight.DefaultCellStyle = dataGridViewCellStyle4;
-            this.gridListofFlight.DoubleBuffered = true;
-            this.gridListofFlight.EnableHeadersVisualStyles = false;
-            this.gridListofFlight.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.gridListofFlight.HeaderBgColor = System.Drawing.Color.SlateBlue;
-            this.gridListofFlight.HeaderForeColor = System.Drawing.Color.Snow;
-            this.gridListofFlight.Location = new System.Drawing.Point(3, 2);
-            this.gridListofFlight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridListofFlight.Name = "gridListofFlight";
-            this.gridListofFlight.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gridListofFlight.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridmaster.DefaultCellStyle = dataGridViewCellStyle4;
+            this.gridmaster.DoubleBuffered = true;
+            this.gridmaster.EnableHeadersVisualStyles = false;
+            this.gridmaster.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.gridmaster.HeaderBgColor = System.Drawing.Color.SlateBlue;
+            this.gridmaster.HeaderForeColor = System.Drawing.Color.Snow;
+            this.gridmaster.Location = new System.Drawing.Point(0, 3);
+            this.gridmaster.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridmaster.Name = "gridmaster";
+            this.gridmaster.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gridmaster.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridListofFlight.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridListofFlight.RowHeadersVisible = false;
-            this.gridListofFlight.RowHeadersWidth = 51;
+            this.gridmaster.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.gridmaster.RowHeadersVisible = false;
+            this.gridmaster.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridListofFlight.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.gridListofFlight.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.gridListofFlight.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.gridListofFlight.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(25)))));
-            this.gridListofFlight.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.gridListofFlight.RowTemplate.DividerHeight = 3;
-            this.gridListofFlight.RowTemplate.Height = 40;
-            this.gridListofFlight.RowTemplate.ReadOnly = true;
-            this.gridListofFlight.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridListofFlight.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridListofFlight.Size = new System.Drawing.Size(1036, 537);
-            this.gridListofFlight.TabIndex = 13;
+            this.gridmaster.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridmaster.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.gridmaster.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.gridmaster.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(25)))));
+            this.gridmaster.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridmaster.RowTemplate.DividerHeight = 3;
+            this.gridmaster.RowTemplate.Height = 40;
+            this.gridmaster.RowTemplate.ReadOnly = true;
+            this.gridmaster.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridmaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridmaster.Size = new System.Drawing.Size(1036, 537);
+            this.gridmaster.TabIndex = 13;
             // 
             // UcusID
             // 
@@ -299,7 +299,7 @@ namespace WindowsFormsApp1.ChildForms
             ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucuslarBindingSource2)).EndInit();
             this.pnlListOfFlights.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridListofFlight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridmaster)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,7 +317,7 @@ namespace WindowsFormsApp1.ChildForms
         private System.Windows.Forms.BindingSource ucuslarBindingSource4;
         private System.Windows.Forms.Panel pnlListOfFlights;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnBiletAl;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid gridListofFlight;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid gridmaster;
         private System.Windows.Forms.DataGridViewTextBoxColumn UcusID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SirketAdi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SehirAdi;
