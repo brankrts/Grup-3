@@ -74,6 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildForms\AlinanBiletler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\AlinanBiletler.Designer.cs">
+      <DependentUpon>AlinanBiletler.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForms\BildirimGoruntule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForms\AlinanBiletler.resx">
+      <DependentUpon>AlinanBiletler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildForms\BildirimGoruntule.resx">
       <DependentUpon>BildirimGoruntule.cs</DependentUpon>
     </EmbeddedResource>

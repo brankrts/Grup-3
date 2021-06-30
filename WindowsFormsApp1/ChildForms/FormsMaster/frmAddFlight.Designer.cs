@@ -70,6 +70,7 @@ namespace WindowsFormsApp1.ChildForms.frmMaster
             this.txtFiyat.Text = "Fiyat";
             this.txtFiyat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtFiyat.OnValueChanged += new System.EventHandler(this.txtPrice_OnValueChanged);
+            this.txtFiyat.Click += new System.EventHandler(this.txtFiyat_Click);
             this.txtFiyat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrice_MouseClick);
             // 
             // btnAddFlightToDb
@@ -259,6 +260,7 @@ namespace WindowsFormsApp1.ChildForms.frmMaster
             this.txtSaat.TabIndex = 16;
             this.txtSaat.Text = "Saat";
             this.txtSaat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSaat.Click += new System.EventHandler(this.txtSaat_Click);
             // 
             // lblUyari
             // 

@@ -57,5 +57,11 @@ namespace WindowsFormsApp1.ChildForms
             FrmBildirimEkle.Show();
             FrmBildirimEkle.Focus();
         }
+
+        private void ıconButton1_Click(object sender, EventArgs e)
+        {
+            AlinanBiletler alinan = new AlinanBiletler();
+            alinan.Show();
+        }
     }
 }

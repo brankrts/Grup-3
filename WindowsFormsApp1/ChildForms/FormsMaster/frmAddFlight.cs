@@ -101,5 +101,15 @@ namespace WindowsFormsApp1.ChildForms.frmMaster
             UcusEkle();
 
         }
+
+        private void txtSaat_Click(object sender, EventArgs e)
+        {
+            txtSaat.Text = "";
+        }
+
+        private void txtFiyat_Click(object sender, EventArgs e)
+        {
+            txtFiyat.Text = "";
+        }
     }
 }

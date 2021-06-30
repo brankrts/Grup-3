@@ -294,7 +294,7 @@ namespace WindowsFormsApp1
 
         private void comboServer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Server.Text = comboServer.SelectedItem.ToString() + " Serverine Bağlanıldı";
+            lblServer.Text = comboServer.SelectedItem.ToString() + " Serverine Bağlanıldı";
         }
     }
 }

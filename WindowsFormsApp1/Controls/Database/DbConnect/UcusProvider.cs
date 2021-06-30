@@ -303,6 +303,55 @@ namespace WindowsFormsApp1.Controls.Database.DbConnect
             }
 
         }
+        public void ListOfBiletlerMaster(Bunifu.Framework.UI.BunifuCustomDataGrid Gridview)
+        {
+            DataSet ds;
+            SqlDataAdapter da;
+            string komut = "select m.MusteriTC,s1.SehirAdi,s2.SehirAdi,k.KoltukNo,u.Tarih " +
+           "from Biletler b " +
+           "inner join Musteriler as m on b.MusteriID = m.MusteriID " +
+
+           "inner join Ucuslar as u on b.UcusID = u.UcusID " +
+
+           "inner join Koltuklar as k on b.KoltukID = k.KoltukID " +
+
+           "inner join Sehirler as s1 on u.Nereden = s1.SehirID " +
+
+           "inner join Sehirler as s2 on u.Nereye = s2.SehirID ";
+            
+
+
+            try
+            {
+
+
+                ;
+                da = new SqlDataAdapter(komut, dbcon.con);
+                ds = new DataSet();
+                da.Fill(ds);
+
+                Gridview.DataSource = ds.Tables[0];
+
+
+
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (dbcon.con != null)
+                {
+                    dbcon.con.Close();
+                }
+            }
+
+        }
         public void AddFlight(int SirketID, int Nereden, int Nereye, DateTime picker, string saat, int Fiyat)
         {
             try

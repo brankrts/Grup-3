@@ -33,8 +33,9 @@ namespace WindowsFormsApp1.ChildForms
             this.btnListOfFlight = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.btnAddMaster = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.pnlMasterChildForm = new System.Windows.Forms.Panel();
             this.btnBildirim = new FontAwesome.Sharp.IconButton();
+            this.pnlMasterChildForm = new System.Windows.Forms.Panel();
+            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,6 +141,7 @@ namespace WindowsFormsApp1.ChildForms
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.ıconButton1);
             this.guna2ShadowPanel1.Controls.Add(this.btnBildirim);
             this.guna2ShadowPanel1.Controls.Add(this.btnAddFlight);
             this.guna2ShadowPanel1.Controls.Add(this.btnAddMaster);
@@ -157,15 +159,6 @@ namespace WindowsFormsApp1.ChildForms
             this.guna2ShadowPanel1.TabIndex = 3;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
-            // pnlMasterChildForm
-            // 
-            this.pnlMasterChildForm.Location = new System.Drawing.Point(0, 143);
-            this.pnlMasterChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlMasterChildForm.Name = "pnlMasterChildForm";
-            this.pnlMasterChildForm.Size = new System.Drawing.Size(1097, 534);
-            this.pnlMasterChildForm.TabIndex = 4;
-            this.pnlMasterChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMasterChildForm_Paint);
-            // 
             // btnBildirim
             // 
             this.btnBildirim.FlatAppearance.BorderSize = 0;
@@ -174,12 +167,36 @@ namespace WindowsFormsApp1.ChildForms
             this.btnBildirim.IconChar = FontAwesome.Sharp.IconChar.Exclamation;
             this.btnBildirim.IconColor = System.Drawing.Color.White;
             this.btnBildirim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBildirim.Location = new System.Drawing.Point(898, 32);
+            this.btnBildirim.Location = new System.Drawing.Point(939, 32);
             this.btnBildirim.Name = "btnBildirim";
             this.btnBildirim.Size = new System.Drawing.Size(46, 52);
             this.btnBildirim.TabIndex = 5;
             this.btnBildirim.UseVisualStyleBackColor = true;
             this.btnBildirim.Click += new System.EventHandler(this.btnBildirim_Click);
+            // 
+            // pnlMasterChildForm
+            // 
+            this.pnlMasterChildForm.Location = new System.Drawing.Point(0, 143);
+            this.pnlMasterChildForm.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMasterChildForm.Name = "pnlMasterChildForm";
+            this.pnlMasterChildForm.Size = new System.Drawing.Size(1097, 534);
+            this.pnlMasterChildForm.TabIndex = 4;
+            this.pnlMasterChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMasterChildForm_Paint);
+            // 
+            // ıconButton1
+            // 
+            this.ıconButton1.FlatAppearance.BorderSize = 0;
+            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.Fax;
+            this.ıconButton1.IconColor = System.Drawing.Color.White;
+            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton1.Location = new System.Drawing.Point(835, 32);
+            this.ıconButton1.Name = "ıconButton1";
+            this.ıconButton1.Size = new System.Drawing.Size(46, 52);
+            this.ıconButton1.TabIndex = 6;
+            this.ıconButton1.UseVisualStyleBackColor = true;
+            this.ıconButton1.Click += new System.EventHandler(this.ıconButton1_Click);
             // 
             // FormMaster
             // 
@@ -205,5 +222,6 @@ namespace WindowsFormsApp1.ChildForms
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Panel pnlMasterChildForm;
         private FontAwesome.Sharp.IconButton btnBildirim;
+        private FontAwesome.Sharp.IconButton ıconButton1;
     }
 }
