@@ -14,7 +14,12 @@ namespace WindowsFormsApp1.ChildForms
         CurrentValues Current = CurrentValues.Instance;
         
        
-        string komut = "SELECT Ucuslar.UcusID,Sirketler.SirketAdi,s1.SehirAdi,s2.SehirAdi,Ucuslar.Tarih,Ucuslar.Saat,Ucuslar.Fiyat FROM Ucuslar INNER JOIN Sirketler ON Ucuslar.SirketID = Sirketler.SirketID INNER JOIN Sehirler as s1 ON @Nereden = s1.SehirID INNER JOIN Sehirler as s2 ON @Nereye = s2.SehirID WHERE ucuslar.Tarih = @Tarih";
+        string komut = "SELECT Ucuslar.UcusID,Sirketler.SirketAdi,s1.SehirAdi,s2.SehirAdi,Ucuslar.Tarih,Ucuslar.Saat,Ucuslar.Fiyat "+  
+            "FROM Ucuslar "+
+            "INNER JOIN Sirketler ON Ucuslar.SirketID = Sirketler.SirketID "+ 
+            "INNER JOIN Sehirler as s1 ON @Nereden = s1.SehirID  "+
+            "INNER JOIN Sehirler as s2 ON @Nereye = s2.SehirID  "+
+            "WHERE ucuslar.Tarih = @Tarih";
 
         private void SetCurrentValues() {
 

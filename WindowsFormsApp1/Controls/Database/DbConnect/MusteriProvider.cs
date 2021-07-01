@@ -262,9 +262,6 @@ namespace WindowsFormsApp1.Controls.Database
         }
         public bool IsMaster(int MusteriID) {
 
-            
-            
-
              dbcon.cmd = new SqlCommand("SELECT MusteriYetki FROM [Musteriler] where MusteriID=@MusteriID ", dbcon.con);
              dbcon.cmd.Parameters.AddWithValue("@MusteriID", MusteriID) ;
              dbcon.con.Open();
@@ -274,16 +271,9 @@ namespace WindowsFormsApp1.Controls.Database
 
                 return true;
             
-            
-             
              }
              else { return false; }
-            
            
-
-
-
-            
         }
 
     }

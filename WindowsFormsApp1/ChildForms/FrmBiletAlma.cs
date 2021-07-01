@@ -45,10 +45,10 @@ namespace WindowsFormsApp1.ChildForms
             {
                 if (x is Guna2CircleButton)
                 {
-                    
 
-                        ((Guna2CircleButton)x).FillColor = System.Drawing.Color.LightGray;
-                  
+
+                    ((Guna2CircleButton)x).FillColor = System.Drawing.Color.LightGray;
+
                 }
             }
             Koltukno = Convert.ToInt32(Button.Text);
